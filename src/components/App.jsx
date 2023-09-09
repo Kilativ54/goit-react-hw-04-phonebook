@@ -13,7 +13,7 @@ export const App = () => {
     { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
   ];
 
-  const [filter, setFilter] = useState('');
+  const [filters, setFilter] = useState('');
 
   const storage = () => JSON.parse(localStorage.getItem('contacts'));
   const [contacts, setContacts] = useState(storage || contactArray);
@@ -32,7 +32,7 @@ export const App = () => {
   };
 
   const getFilteredContacts = () => {
-    const normalizedFilter = filter.toLowerCase();
+    const normalizedFilter = filters.toLowerCase();
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalizedFilter)
     );
@@ -52,7 +52,7 @@ export const App = () => {
       <h1>Phonebook</h1>
       <ContactForm handleSubmit={handleSubmit} />
       <h2> Contacts</h2>
-      <Filter filter={filter} handleChange={handleChange} />
+      <Filter filter={filters} handleChange={handleChange} />
       <ContactList
         contacts={getFilteredContacts()}
         handleDelete={handleDelete}
