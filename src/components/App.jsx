@@ -30,14 +30,10 @@ export const App = () => {
   };
 
   const getFilteredContacts = () => {
-    // const normalizedFilter = filters.toLowerCase();
-    // return contacts.filter(contact =>
-    //   contact.name.toLowerCase().includes(normalizedFilter)
-    // );
-    const filterContactsList = contacts.filter(contact => {
-      return contact.name.toLowerCase().includes(filters.toLowerCase());
-    });
-    return filterContactsList;
+    const normalizedFilter = filters.toLowerCase();
+    return contacts.filter(contact =>
+      contact.name.toLowerCase().includes(normalizedFilter)
+    );
   };
 
   const handleChange = e => {
