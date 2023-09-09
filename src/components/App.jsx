@@ -14,7 +14,7 @@ export const App = () => {
   ];
   const storage = () => JSON.parse(window.localStorage.getItem('contacts'));
   const [contacts, setContacts] = useState(storage ?? contactArray);
-  const [filters, setFilter] = useState('');
+  const [filter, setFilter] = useState('');
 
   const handleSubmit = contactItem => {
     const { name } = contactItem;
@@ -36,7 +36,7 @@ export const App = () => {
   };
 
   const getFilteredContacts = () => {
-    const normalizedFilter = filters.toLowerCase();
+    const normalizedFilter = filter.toLowerCase();
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalizedFilter)
     );
