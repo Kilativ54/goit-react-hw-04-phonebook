@@ -37,7 +37,7 @@ export const App = () => {
   };
 
   const handleChange = e => {
-    const { value } = e.target;
+    const { value } = e.currentTarget;
     setFilter(value);
   };
 
@@ -50,7 +50,7 @@ export const App = () => {
       <h1>Phonebook</h1>
       <ContactForm handleSubmit={handleSubmit} />
       <h2> Contacts</h2>
-      <Filter filter={filters} handleChange={handleChange} />
+      <Filter  handleChange={handleChange} />
       <ContactList
         contacts={getFilteredContacts()}
         handleDelete={handleDelete}
