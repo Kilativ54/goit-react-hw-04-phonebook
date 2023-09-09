@@ -29,16 +29,17 @@ export const App = () => {
     setContacts(contacts => contacts.filter(contact => contact.id !== id));
   };
 
+
+  const handleChange = e => {
+    const { value } = e.currentTarget;
+    setFilter(value);
+  };
+
   const getFilteredContacts = () => {
     const normalizedFilter = filters.toLowerCase();
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalizedFilter)
     );
-  };
-
-  const handleChange = e => {
-    const { value } = e.currentTarget;
-    setFilter(value);
   };
 
   useEffect(() => {
