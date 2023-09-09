@@ -30,7 +30,6 @@ export const App = () => {
     setContacts(contacts => contacts.filter(contact => contact.id !== id));
   };
 
-
   const handleChange = e => {
     const { value } = e.currentTarget;
     setFilter(value);
@@ -52,7 +51,7 @@ export const App = () => {
       <h1>Phonebook</h1>
       <ContactForm handleSubmit={handleSubmit} />
       <h2> Contacts</h2>
-      <Filter  handleChange={handleChange} />
+      <Filter handleChange={handleChange} />
       <ContactList
         contacts={getFilteredContacts()}
         handleDelete={handleDelete}
